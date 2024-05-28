@@ -5,25 +5,24 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
-    private int id;
-//    @Column(name = "name")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "name")
     private String name;
-//    @Column(name = "lastname")
+    @Column(name = "lastname")
     private String lastname;
-//    @Column(name = "age")
+    @Column(name = "age")
     private int age;
-//    @Column(name = "email")
+    @Column(name = "email")
     private String email;
-//    @Column(name = "password")
+    @Column(name = "password")
     private String password;
 
     public User() {
     }
-    public User(int id, String name, String lastname, int age, String email, String password) {
+    public User(String name, String lastname, int age, String email, String password) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
@@ -31,11 +30,11 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
